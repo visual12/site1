@@ -1,0 +1,17 @@
+<h1>Pole koła</h1>
+<form action="index.php?id=3" method="post">
+promień <input type="text" name="r"><br>
+<input type="submit" value="wyślij">
+
+</form>
+<?php
+$r= isset($_POST["r"])?$_POST["r"]:"";
+$pi= 3.1415;
+
+if ($r !="")
+{
+    $pole= $pi*$r*$r;
+    echo 'Pole wynosi: '.$pole;
+} 
+else echo "podaj promień";
+?>

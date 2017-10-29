@@ -1,0 +1,20 @@
+<form action="index.php?id=1" method="post">
+        bok a= <input type="text" name="a"><br>
+        bok b= <input type="text" name="b"><br>
+        bok c= <input type="text" name="c"><br>
+        <input type="submit" value="wyślij">
+        </form>
+        <?php
+            $a = isset($_POST["a"]) ?$_POST["a"]:""; 
+            $b = isset($_POST["b"]) ?$_POST["b"]:""; 
+            $c = isset($_POST["c"]) ?$_POST["c"]:""; 
+        
+            if($a != "" && $b != "" && $c != "" )
+            {
+                $p = ($a+$b+$c)/2;
+                $pole = sqrt($p*($p-$a)*($p-$b)*($p-$c));
+                echo $pole;	
+            }
+            else
+                echo "podaj boki trojkata";
+        ?>
