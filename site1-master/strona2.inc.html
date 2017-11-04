@@ -1,0 +1,29 @@
+<h1>Tabliczka mnożenia</h1>
+<form action="index.php?id=2" method="post"> 
+ilość wierszy <input type="text" name="n" /><br>
+ilość kolumn <input type="text" name="k"/><br>
+<input type="submit" value="wyślij" />
+</form>
+<table>
+<?php
+$liczba_wierszy = isset($_POST["n"])?$_POST["n"]:"";
+$liczba_kolumn = isset($_POST["k"])?$_POST["k"]:"";
+
+
+for ($i = 1; $i <= $liczba_wierszy; $i++) {
+    echo '<tr>';
+    for ($j = 1; $j <= $liczba_kolumn; $j++) {    
+        if ($i*$j%2==0)
+        {
+            echo '<td style="color: red">';
+            echo $j * $i;            
+
+        } 
+        else 
+            echo '<td>'. $j * $i;
+        echo '</td>';
+    }
+    echo '</tr>';    
+}   
+?>
+</table>

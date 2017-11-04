@@ -1,0 +1,21 @@
+<h1>Obwód prostokąta</h1>
+<form action="index.php?id=4" method="post" />
+bok a <input type="text" name="a" /><br>
+bok b <input type="text" name="b" /><br>
+<input type="submit" value="wyślij" />
+
+</form>
+<?php
+$a= isset($_POST["a"])?$_POST["a"]:"";
+$b= isset($_POST["b"])?$_POST["b"]:"";
+
+if ($a !="" && $b !="")
+
+
+{
+ $obwod= (2*$a) + (2*$b);
+ echo 'obwód wynosi: '.$obwod;
+
+}
+else echo "podaj boki";
+?>

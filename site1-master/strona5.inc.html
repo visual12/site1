@@ -1,0 +1,21 @@
+<h1>Pole trapezu</h1>
+<form action="index.php?id=5" method="post" />
+bok a <input type="text" name="a" /> <br>
+bok b <input type="text" name="b" /> <br>
+wysokość h <input type="text" name="h" /><br>
+<input type="submit" value="wyślij">
+</form>
+
+<?php
+$a= isset($_POST["a"])?$_POST["a"]:"";
+$b= isset($_POST["b"])?$_POST["b"]:"";
+$h= isset($_POST["h"])?$_POST["h"]:"";
+
+if ($a !="" && $b !="" && $h !="")
+{
+    $pole= (($a+$b)*$h)/2;
+    echo 'Pole wynosi: '.$pole;
+}
+
+else echo "Podaj dane";
+?>
